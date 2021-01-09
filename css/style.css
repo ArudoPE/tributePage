@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+:root {
+    --main-font-size: 1.7rem;
+    --title-font-size: 4.5rem;
+    --header-text-font-size: 1.8rem;
+    --footer-font-size: 1.5rem;
+    --figcaption-font-size: 1.4rem;
+    --box-shadow-size: 1rem;
+    --header-box-size: 100px;
+    --footer-box-size: 30px;
+}
+@media (max-width: 600px) {
+:root {
+    --main-font-size: 1.3rem;
+    --title-font-size: 3rem;
+    --header-text-font-size: 1.5rem;
+    --footer-font-size: 1.3rem;
+    --figcaption-font-size: 1.3rem;
+    --box-shadow-size: 0.5rem;
+    --header-box-size: 70px;
+    --footer-box-size: 20px;
+}
+}
+.body-container {
+    background-color: grey;
+    display: grid;
+    grid-template-columns:100vh;
+    grid-template-rows: var(--header-box-size) auto var(--footer-box-size);
+    grid-template-areas:
+    "header"
+    "main"
+    "footer"
+    ;
+}
+.header {
+    background-color: #a3ddcb;
+    grid-area: header;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 100vw;
+}
+.header-title {
+    font-size: var(--title-font-size);
+    font-family: 'Potta One', cursive;
+    color: #0d1c17 ;
+}
+.header-title-container h1 {
+    padding-left: 45px;
+}
+.header-text {
+    font-size: var(--header-text-font-size);
+    font-family: serif;
+}
+.main {
+    background-color: #e8e9a1;
+    grid-area: main;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    width: 100vw;
+    padding: 10px 2px 2px 4px;
+}
+.tribute-info {
+    color: #0d1c17;
+    font-size: var(--main-font-size);
+}
+.tribute-info a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+.tribute-info a:hover {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+.main-list {
+    text-align: center;
+}
+.main-list li::before {
+    content: "◾️";
+}
+.img-div {
+    margin-top: 10px;
+}
+.img-div img{
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-size) var(--box-shadow-size) var(--box-shadow-size) rgba(0,0,0,0.4);
+}
+.img-div figcaption {
+    font-size: var(--figcaption-font-size);
+    font-weight: bold;
+    color: #0d1c17;
+    margin-top: 10px;
+}
+.footer {
+    background-color: #a3ddcb;
+    font-family: serif;
+    font-size: var(--footer-font-size);
+    grid-area: footer;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    width: 100vw;
+}
+.footer-text-container {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-weight: bold;
+    color: #0d1c17 ;
+}
+.center-text {
+    text-align: center;
+}
